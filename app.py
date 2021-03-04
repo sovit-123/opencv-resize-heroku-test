@@ -1,6 +1,7 @@
 import streamlit as st
 import cv2
 import numpy as np
+import time
 
 st.title('Image Resizing with OpenCV')
 
@@ -31,6 +32,9 @@ if uploaded_file is not None:
         points = ((width, height))
         
         resized_image = cv2.resize(opencv_image , points, interpolation = cv2.INTER_LINEAR)
-        
+        with st.spinner('Resizing image ⏳...'):
+            time.sleep(2.5)
+            st.success('Done!')
+
         st.image(resized_image[:,:,::-1])
     
