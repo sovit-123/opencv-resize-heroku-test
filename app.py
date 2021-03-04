@@ -19,8 +19,12 @@ if uploaded_file is not None:
     st.subheader('Define new Width and Height')
     
     
-    width = int(st.number_input('Input a new a Width'))
-    height = int(st.number_input('Input a new a Height'))
+    # width = int(st.number_input('Input a new a Width'))
+    # height = int(st.number_input('Input a new a Height'))
+    width = st.slider('Width', min_value=None, max_value=2000, 
+              value=None, step=10, format=None, key=None)
+    height = st.slider('Height', min_value=None, max_value=2000, 
+              value=None, step=10, format=None, key=None)
 
     # resize only if both width and height greater than zero
     if width > 0 and height > 0:
